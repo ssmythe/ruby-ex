@@ -8,7 +8,12 @@ pipeline {
     }
     stage('Ruby Syntax Check') {
       steps {
-        sh 'ruby -c config.ru'
+        sh '''sh \'\'\'#!/bin/bash -l
+rvm use 2.2.1@ruby-ex
+bundle install
+ruby -c config.ru
+\'\'\'
+'''
       }
     }
   }
