@@ -15,5 +15,10 @@ pipeline {
         }
       }
     }
+    stage('Build Hello') {
+      steps {
+        build 'hello build job'
+      }
+    }
   }
 }
